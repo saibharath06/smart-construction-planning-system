@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BuildAI Pro – PlanForge Engine</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <div class="logo">
+                <span class="logo-icon">🏗️</span>
+                <span class="logo-text">BuildAI Pro</span>
+            </div>
+            <div class="nav-links">
+                <a href="#calculator">Calculator</a>
+                <a href="#results">Results</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="container hero-content">
+            <h1 class="hero-title">AI Construction Planning</h1>
+            <p class="hero-subtitle">
+                Smart workforce, material, cost & timeline estimation using AI
+            </p>
+            <button class="cta-button" onclick="scrollToCalculator()">
+                Start Planning
+            </button>
+        </div>
+    </section>
+
+    <!-- CALCULATOR -->
+    <section id="calculator" class="calculator-section">
+        <div class="container">
+            <h2 class="section-title">Project Calculator</h2>
+
+            <div class="calculator-card">
+                <form id="projectForm" class="calculator-form">
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Built-up Area (sq.ft)</label>
+                            <input type="number" id="builtUpArea" required placeholder="1200">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Floors</label>
+                            <select id="floors" required>
+                                <option value="">Select</option>
+                                <option value="G">G</option>
+                                <option value="G+1">G+1</option>
+                                <option value="G+2">G+2</option>
+                                <option value="G+3">G+3</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Duration (days)</label>
+                            <input type="number" id="days" required placeholder="180">
+                        </div>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="submit" class="submit-button">
+                            Calculate Project
+                        </button>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- RESULTS -->
+    <section id="results" class="dashboard-section" style="display:none;">
+        <div class="container">
+            <h2 class="section-title">Project Results</h2>
+
+            <div class="dashboard-grid">
+                <div class="dashboard-card">
+                    <h3>👷 Workforce</h3>
+                    <p>Total Workers: <b><span id="workersTotal"></span></b></p>
+                </div>
+
+                <div class="dashboard-card">
+                    <h3>🧱 Materials</h3>
+                    <p>Cement Bags: <b><span id="cement"></span></b></p>
+                    <p>Steel (tons): <b><span id="steel"></span></b></p>
+                </div>
+
+                <div class="dashboard-card">
+                    <h3>💰 Cost</h3>
+                    <p>Total Cost: ₹<b><span id="totalCost"></span></b></p>
+                </div>
+
+                <div class="dashboard-card">
+                    <h3>⏳ Timeline</h3>
+                    <p>Finishing Phase: <b><span id="timeline"></span></b></p>
+                </div>
+            </div>
+
+            <div class="dashboard-card">
+                <h3>🤖 AI Insights</h3>
+                <p id="aiInsights"></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <p>BuildAI Pro | PlanForge AI Engine | Offline AI Web Application</p>
+        </div>
+    </footer>
+
+    <!-- Script -->
+    <script src="script.js"></script>
+
+</body>
+</html>
